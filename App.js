@@ -38,9 +38,10 @@ export default class extends React.Component {
     this.getLocation();
   }
   render(){
-    const {isLoading} = this.state;
-    return isLoading ? (<Loading />) : 
-    (<Weather />)
+    const {isLoading, temp, name, condition} = this.state;
+    return isLoading ? (<Loading />) : (
+      <Weather temp={temp} name={name} condition={condition}/>
+    );
   }
 }
 
